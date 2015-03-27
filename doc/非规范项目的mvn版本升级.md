@@ -1,3 +1,6 @@
+doc:
+
+(http://mojo.codehaus.org/versions-maven-plugin/usage.html)[http://mojo.codehaus.org/versions-maven-plugin/usage.html]
 
 plugin:
 
@@ -19,7 +22,7 @@ plugin:
                 </plugin>
             </plugins>
         </reporting>
-        
+
 
 升级版本：
 
