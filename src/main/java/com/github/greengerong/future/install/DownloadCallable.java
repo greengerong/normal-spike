@@ -1,4 +1,4 @@
-package com.github.greengerong.future.install.install;
+package com.github.greengerong.future.install;
 
 import com.google.common.eventbus.EventBus;
 
