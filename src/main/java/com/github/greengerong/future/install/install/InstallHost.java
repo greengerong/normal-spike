@@ -1,12 +1,10 @@
-package com.github.greengerong.future.install;
+package com.github.greengerong.future.install.install;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.eventbus.AsyncEventBus;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.google.common.util.concurrent.*;
-import org.junit.Test;
 
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -24,7 +22,6 @@ import java.util.concurrent.Executors;
 public class InstallHost {
 
     private final ListeningExecutorService executorService;
-    public static final int HOST_COUNT = 10;
     private List<ListenableFuture<InstallHostModel>> downloadFutures = Lists.newArrayList();
     private final EventBus eventBus;
 
@@ -33,11 +30,7 @@ public class InstallHost {
         eventBus = new AsyncEventBus(executorService);
     }
 
-    @Test
-    public void should_Name() throws Exception {
-        install(createInstallHostModels());
 
-    }
 
     public void install(List<InstallHostModel> installHostModels) throws Exception {
 
@@ -59,13 +52,7 @@ public class InstallHost {
 
     }
 
-    private List<InstallHostModel> createInstallHostModels() {
-        final ImmutableList.Builder<InstallHostModel> builder = new ImmutableList.Builder<InstallHostModel>();
-        for (int i = 0; i < HOST_COUNT; i++) {
-            builder.add(new InstallHostModel(String.format("196.198.0.%s", i)));
-        }
-        return builder.build();
-    }
+
 
     @Subscribe
     public void controlFinish(final InstallHostModel installHostModel) {

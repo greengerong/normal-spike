@@ -1,4 +1,4 @@
-package com.github.greengerong.future.install;
+package com.github.greengerong.future.install.install;
 
 import com.google.common.util.concurrent.AsyncFunction;
 import com.google.common.util.concurrent.Futures;

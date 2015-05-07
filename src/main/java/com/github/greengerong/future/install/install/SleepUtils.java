@@ -1,4 +1,4 @@
-package com.github.greengerong.future.install;
+package com.github.greengerong.future.install.install;
 
 /**
  * ***************************************
