@@ -27,7 +27,7 @@ public class ObjectMapperTest {
     public void should_get_all_key_value_pair_from_query_handler() throws Exception {
         final String json = "{\"/order/item[0]\":\"item1\",\"/order/item[1]\":\"item2\"}";
 
-        final QueryHandler queryHandler = new QueryHandler();
+        final HandlerBase queryHandler = new QueryHandler();
         queryHandler.response(json);
 
         assertThat(queryHandler.get("/order/item[0]"), is("item1"));
@@ -47,6 +47,8 @@ public class ObjectMapperTest {
         }
 
         protected abstract void innerResponse(T model);
+
+        public abstract String get(String key);
     }
 
     private class QueryHandler extends HandlerBase<Map<String, String>> {
@@ -58,6 +60,7 @@ public class ObjectMapperTest {
             this.model = model;
         }
 
+        @Override
         public String get(String key) {
             return model.get(key);
         }
