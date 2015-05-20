@@ -1,7 +1,6 @@
 package com.github.greengerong.future.install;
 
 import com.google.common.collect.Lists;
-import com.google.common.eventbus.AsyncEventBus;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.google.common.util.concurrent.*;
@@ -27,9 +26,8 @@ public class InstallHost {
 
     public InstallHost() {
         executorService = MoreExecutors.listeningDecorator(Executors.newFixedThreadPool(10));
-        eventBus = new AsyncEventBus(executorService);
+        eventBus = new EventBus();
     }
-
 
 
     public void install(List<InstallHostModel> installHostModels) throws Exception {
@@ -49,9 +47,7 @@ public class InstallHost {
         System.out.println("Main Thread finish----------------");
         //
         lastStep.get();
-
     }
-
 
 
     @Subscribe
@@ -65,5 +61,4 @@ public class InstallHost {
         System.out.println(rollBackModel.getInstallHostModel().getHostIp() + " error reason: " + rollBackModel.getReason());
         System.out.println(rollBackModel.getInstallHostModel().getHostIp() + " was roll back.");
     }
-
 }
