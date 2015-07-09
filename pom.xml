@@ -99,6 +99,36 @@
             <artifactId>akka-actor</artifactId>
             <version>2.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-app</artifactId>
+            <version>1.9</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.apache.Tika</groupId>-->
+        <!--<artifactId>Tika-core</artifactId>-->
+        <!--<version>1.9</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.Tika</groupId>-->
+        <!--<artifactId>Tika-parsers</artifactId>-->
+        <!--<version>1.9</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.Tika</groupId>-->
+        <!--<artifactId>Tika</artifactId>-->
+        <!--<version>1.6</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.Tika</groupId>-->
+        <!--<artifactId>Tika-serialization</artifactId>-->
+        <!--<version>1.6</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.Tika</groupId>-->
+        <!--<artifactId>Tika-app</artifactId>-->
+        <!--<version>1.6</version>-->
+        <!--</dependency>-->
     </dependencies>
     <repositories>
         <repository>

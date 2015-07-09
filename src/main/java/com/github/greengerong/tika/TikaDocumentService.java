@@ -37,7 +37,7 @@ public class TikaDocumentService implements Serializable {
     private static final String OUT_PUT_FILE_TYPE = "html";
 
     public static void main(String[] args) throws Exception {
-        final String file = "/Users/zxgerong/project/opensource/java/normal-spike/src/main/resources/tika-demo.pdf";
+        final String file = "/Users/zxgerong/project/opensource/java/normal-spike/src/main/resources/demo.docx";
         final String text = new TikaDocumentService().toHtml(new FileInputStream(file));
 
         FileUtils.write(new File("test.html"), text);
