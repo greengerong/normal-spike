@@ -21,6 +21,7 @@ public class ImageIOTest {
     public void should_merge_image() throws Exception {
 
         long start = System.currentTimeMillis();
+
         final BufferedImage mapImg = ImageIO.read(new File("./src/test/resources/map-example.png"));
         final BufferedImage markImg = ImageIO.read(new File("./src/test/resources/mark.jpeg"));
 
