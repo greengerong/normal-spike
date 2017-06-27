@@ -5,9 +5,6 @@
     <groupId>com.github.greengerong</groupId>
     <artifactId>normal-spike</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>mutiple-module-demo</module>
-    </modules>
     <packaging>pom</packaging>
 
     <name>normal-spike</name>
@@ -27,6 +24,7 @@
         <spring-context.version>3.0.5.RELEASE</spring-context.version>
         <joda-time.version>2.3</joda-time.version>
         <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
+        <rxjava.version>1.1.5</rxjava.version>
     </properties>
 
     <dependencies>
@@ -63,6 +61,11 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.reactivex</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>${rxjava.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -104,31 +107,6 @@
             <artifactId>tika-app</artifactId>
             <version>1.9</version>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>org.apache.Tika</groupId>-->
-        <!--<artifactId>Tika-core</artifactId>-->
-        <!--<version>1.9</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>org.apache.Tika</groupId>-->
-        <!--<artifactId>Tika-parsers</artifactId>-->
-        <!--<version>1.9</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>org.apache.Tika</groupId>-->
-        <!--<artifactId>Tika</artifactId>-->
-        <!--<version>1.6</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>org.apache.Tika</groupId>-->
-        <!--<artifactId>Tika-serialization</artifactId>-->
-        <!--<version>1.6</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>org.apache.Tika</groupId>-->
-        <!--<artifactId>Tika-app</artifactId>-->
-        <!--<version>1.6</version>-->
-        <!--</dependency>-->
     </dependencies>
     <repositories>
         <repository>
@@ -151,8 +129,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
@@ -193,22 +171,4 @@
             </plugin>
         </plugins>
     </build>
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>${versions-maven-plugin.version}</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>dependency-updates-report</report>
-                            <report>plugin-updates-report</report>
-                            <report>property-updates-report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-        </plugins>
-    </reporting>
 </project>
